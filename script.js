@@ -9,6 +9,8 @@ const messageInput = document.getElementById('message-input');
 let localStream;
 let remoteStream;
 let peerConnection;
+let spaceBarPressCount = 0;
+let spaceBarTimer;
 const configuration = {
     iceServers: [
         { urls: 'stun:stun.l.google.com:19302' } // STUN server for NAT traversal
@@ -89,5 +91,26 @@ function sendMessage() {
 messageInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         sendMessage();
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        // Prevent default space bar behavior (scrolling the page)
+        event.preventDefault();
+        
+        spaceBarPressCount++;
+
+        // If space bar is pressed twice
+        if (spaceBarPressCount === 2) {
+            handleNextButton();
+            spaceBarPressCount = 0; // Reset count
+        }
+
+        // Reset timer after a short duration (300 milliseconds)
+        clearTimeout(spaceBarTimer);
+        spaceBarTimer = setTimeout(() => {
+            spaceBarPressCount = 0; // Reset count if time exceeds 300ms
+        }, 300);
     }
 });

@@ -11,6 +11,7 @@ function App() {
   useEffect(() => {
     container.className=dark?"container dark":"container white";
     chatbody.className=dark?"chat-body dark blacktext whiteborder":"chat-body white blacktext blackborder";
+    document.body.style.backgroundColor=dark?"black":"white"
     // Cleanup function to reset the background color when the component unmounts
   }, [dark]);
 
