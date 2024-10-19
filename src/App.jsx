@@ -4,10 +4,13 @@ import './App.css';
 function App() {
   const [dark, changeTheme] = useState(true);
   const container=document.getElementsByClassName("container")[0];
+  const chatbody=document.getElementById("chat-body");
+  const chatbox=document.getElementsByClassName("chat-container")[0]
 
   // Change body background color based on the theme
   useEffect(() => {
     container.className=dark?"container dark":"container white";
+    chatbody.className=dark?"chat-body dark blacktext whiteborder":"chat-body white blacktext blackborder";
     // Cleanup function to reset the background color when the component unmounts
   }, [dark]);
 
@@ -20,7 +23,7 @@ function App() {
         >
           <div className="innerbutton" />
         </div>
-        <h6>{dark ? 'Night Mode' : 'Day Mode'}</h6>
+        <h6>{dark ? 'Night Theme' : 'Light Theme'}</h6>
       </div>
     </>
   );

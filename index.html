@@ -25,14 +25,14 @@
                         <!-- Messages will be appended here -->
                     </div>
                     <div class="chat-footer">
-                        <input type="text" id="message-input" placeholder="Type a message...">
-                        <button onclick="sendMessage()">Send</button>
+                        <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+                        <button id="input-submit" onclick="sendMessage()">Send</button>
                     </div>
                 </div>
             </div>
             <button id="startButton">Start Chat</button>
-            <button id="hangUpButton" disabled>Pause</button>
-            <button id="Next" disabled>Next</button>
+            <button id="hangUpButton" style="display:none;">Hang Up</button>
+            <button id="nextButton" style="display:none;">Next</button>
         </main>
     </div>
     <script src="script.js"></script>

@@ -3,7 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
 }
-
+html,body{
+  margin: 0;
+  padding: 0;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -38,4 +41,18 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.whitetext{
+  color:white;
+}
+.blacktext{
+  color:black;
+}
+
+.blackborder{
+  border: 2px solid rgb(198, 196, 196);
+}
+.whiteborder{
+  border: 2px solid white;
 }
